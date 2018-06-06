@@ -69,6 +69,7 @@ Route::middleware('admin')->group(function (){
 	]);
 
 	Route::get('/feecollection','AdminController@feeCollectionView');
+
 	Route::post('/feecollection',[
 		'uses'=>'AdminController@collectFee',
 		'as'=> 'feecollection'

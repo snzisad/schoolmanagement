@@ -249,6 +249,32 @@
     </div>
     <!-- End Wrapper -->
 
+
+    <!-- Additional Modal -->
+    
+    <!-- Add Catagory Modal -->
+    <div class="modal fade" id="new-catagory-modal" tabindex="-1" role="dialog" aria-labelledby="new-catagory-modal-title" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="new-catagory-modal-title">New Catagory</h5>
+          </div>
+          <form class="form-group" method="POST" action="{{route('addcatagory')}}">
+            {{csrf_field()}}
+              <div class="modal-body">
+                <div class="form-group">
+                    <label for="catagory">Catagory Name</label><br>
+                    <input type="text" class="form-control" name="catagory" placeholder="Enter Catagory Name" required autofocus='true'>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="/feecollection" class="btn btn-secondary">Close</a>
+                <input type="submit" class="btn btn-primary" value="Add Catagory">
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- All Jquery -->
     
 
@@ -271,7 +297,7 @@
     <!-- <script src='{{asset("content/js/lib/chartist/chartist-plugin-tooltip.min.js")}}'></script> -->
     <!-- <script src='{{asset("content/js/lib/chartist/chartist-init.js")}}'></script> -->
 
-    <!-- <script src="content/js/lib/jquery/jquery.min.js"></script> -->
+    <script src="content/js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="content/js/lib/bootstrap/js/popper.min.js"></script>
     <!-- <script src="content/js/lib/bootstrap/js/bootstrap.min.js"></script> -->
@@ -289,7 +315,7 @@
 
     
     <!-- JQuery UI -->
-    <script src='{{asset("content/js/jquery.min.js")}}'></script>
+    <!-- <script src='{{asset("content/js/jquery.min.js")}}'></script> -->
 
     <script src='{{asset("content/js/jquery-ui.min.js")}}'></script>
 

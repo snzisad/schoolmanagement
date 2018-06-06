@@ -138,7 +138,7 @@
         <div class="card">
             <div class="card-title">
                 <h4>Fee Collection of this Month</h4> 
-                <i class="pull-right">৳ 20000</i>
+                <span class="pull-right">৳ <b class='count'>20000</b></span>
             </div>
             <div class="sales-chart">
                 <canvas id="team-chart"></canvas>
@@ -149,7 +149,7 @@
         <div class="card">
             <div class="card-title">
                 <h4>Fee Collection of this Year</h4>
-                <i class="pull-right">৳ 150000</i>
+                <span class="pull-right">৳ <b class='count'>150000</b></span>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

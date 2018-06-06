@@ -26,9 +26,13 @@ class AdminController extends Controller
     		'catagory'=>'required'
     	]);
 
+        $catagory=Catagory::where('catagory',$request->catagory)->first();
+        if($catagory){
+            return redirect('/feecollection')->withErrors('Catagory alerady added');
+        }
     	Catagory::create($request->all());
 
-    	return redirect('/feecollection');
+    	return redirect('/feecollection')->withErrors(array('message'=>'Catagory added successfully'));
     }
 
     public function collectFee(Request $request){
@@ -39,10 +43,15 @@ class AdminController extends Controller
     	]);
 
     	if($request->catagory=='add-catagory'){
-    		return redirect('/feecollection')->withErrors('Please select a valid catagory');
+    		 return response()->json([
+                'message' => "Fail"
+            ], 200);
     	}
 
     	Fee::create($request->all());
-    	return redirect('/feecollection')->withErrors(array('message'=>'Fees collected successfully'));
+    	
+        return response()->json([
+                'message' => "Success"
+            ], 200);
     }
 }

@@ -11,37 +11,35 @@
                 Fee Collection
             </div>
             <div class="card-body">
-                <form class="form-group" method="POST" action="feecollection">
-                    {{csrf_field()}}
+                <form class="form-group" id="fee-collection-form" method="POST" action="feecollection">
+                    <div id="token_field" data-token='{{ csrf_token() }}'></div>
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="student_id">Student ID</label><br>
-                                <input type="number" class="form-control" name="student_id" placeholder="Enter Student ID" required autofocus value="{{old('student-id')}}">
+                                <input type="number" class="form-control" id="student_id" name="student_id" placeholder="Enter Student ID" required autofocus value="{{old('student-id')}}">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="catagory">Catagory</label><br>
-                                <select class="custom-select" id="catagory-selection" name="catagory" required value="{{old('catagory')}}">
-                                    <option value="" selected disabled>Select fee catagory</option>
-                                    @foreach($catagories as $catagory)
-                                        <option value="{{$catagory->catagory}}">{{$catagory->catagory}}</option>
-                                    @endforeach
-                                    <option value="add-catagory">Add Catagory</option>
-                                </select>
+                                @include('catagory.feecatagory')
+                                <h6 id="catagory_error" class="text-danger" style="margin-top: 5px; display: none;">Select a valid catagory</h6>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="amount">Amount</label><br>
-                                <input type="number" class="form-control" name="amount" placeholder="Enter Amount" required autofocus value="{{old('amount')}}">
+                                <input type="number" class="form-control" id="fee_amount" name="amount" placeholder="Enter Amount" required autofocus value="{{old('amount')}}">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label>.</label><br>
-                                <input type="submit" id="submit-button" class="btn btn-primary align-bottom" value="Collect">
+                                <input type="submit" id="collect-fee-button" class="btn btn-primary align-bottom" value="Collect">
+                                <i id="loading-spinner" class="fa fa-spinner fa-pulse fa-2x fa-fw text-warning" style="display: none;"></i>
+                                <h4 id="success-text" class="text-success" style="display: none;"><i class="fa fa-check"></i> Success </h4>
+                                <h4 id="error-text" class="text-danger" style="display: none;"><i class="fa fa-close"></i> Error </h4>
                             </div>
                         </div>
                     </div>
@@ -49,28 +47,5 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="modal fade" id="new-catagory-modal" tabindex="-1" role="dialog" aria-labelledby="new-catagory-modal-title" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="new-catagory-modal-title">New Catagory</h5>
-      </div>
-      <form class="form-group" method="POST" action="{{route('addcatagory')}}">
-        {{csrf_field()}}
-          <div class="modal-body">
-            <div class="form-group">
-                <label for="catagory">Catagory Name</label><br>
-                <input type="text" class="form-control" name="catagory" placeholder="Enter Catagory Name" required autofocus='true'>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="/feecollection" class="btn btn-secondary">Close</a>
-            <input type="submit" class="btn btn-primary" value="Add Catagory">
-          </div>
-      </form>
-    </div>
-  </div>
 </div>
 @endsection
