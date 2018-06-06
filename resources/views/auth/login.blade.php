@@ -14,7 +14,7 @@
     -->
     <div class="container">
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="{{asset('content/images/logo.jpg')}}" />
+            <img id="profile-img" class="profile-img-card" src="{{asset('content/images/logo.png')}}" />
             @if (count($errors)>0)
                 <p class="bg-danger">
                     @foreach($errors->all() as $error)

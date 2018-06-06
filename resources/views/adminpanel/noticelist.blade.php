@@ -28,7 +28,9 @@
                 Current Notice <a class="pull-right edit-current-notice-button" href="#" data-toggle="modal" data-target="#edit-notice-modal"><i class='fa fa-pencil'></i> Edit</a>
             </div>
             <div class="card-body ">
-                <span class="current-notice-text" size='{{$current_notice->notice}}' value="Hello">{{$current_notice->notice}} </span>
+                @if($current_notice)
+                <span class="current-notice-text">{{$current_notice->notice}} </span>
+                @endif
             </div>
         </div>
     </div>
@@ -45,9 +47,9 @@
                     <div class='card-footer'> 
                         <b style="margin-left: -18px;">Date & Time:</b> {{$notice->created_at}} 
                         <span class="pull-right"> 
-                            <a href="/noticelist/makecurrent/{{$notice->id}}"><i class='fa fa-check-circle'></i> Make Current Notice</a>
+                            <a href="{{asset('/noticelist/makecurrent/'.$notice->id)}}"><i class='fa fa-check-circle'></i> Make Current Notice</a>
                             <a href="#" class="edit-notice-button" data-toggle="modal" data-target="#edit-notice-modal"><i class='fa fa-pencil'></i> Edit</a>
-                            <a href="/noticelist/remove/{{$notice->id}}"><i class='fa fa-trash'></i> Delete</a>
+                            <a href="{{asset('/noticelist/remove/'.$notice->id)}}"><i class='fa fa-trash'></i> Delete</a>
                          </span>
                     </div>
                     <p class="card-body notice-text" $(".notice-text").attr('notice-id')="{{$notice->id}}"> {{$notice->notice}} </p>
@@ -74,7 +76,7 @@
                 </div>
             </div>
               <div class="modal-footer">
-                <a href="/noticelist" class="btn btn-secondary">Close</a>
+                <a href="{{asset('/noticelist')}}" class="btn btn-secondary">Close</a>
                 <input type="submit" class="btn btn-primary" value="Save Changes">
               </div>
         </form>

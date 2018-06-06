@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
+
+
 
 Auth::routes();
 
@@ -37,9 +39,7 @@ Route::get('/teacher',function(){
 
 
 Route::middleware('admin')->group(function (){
-	Route::get('/dashboard',function(){
-		return view('adminpanel.dashboard');
-	});
+	Route::get('/dashboard','AdminController@viewDashboard');
 	
 	Route::get('/institution','InstitutionController@InstitutionDetailsView');
 

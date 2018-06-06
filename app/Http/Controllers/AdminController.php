@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Model\Catagory;
 use App\Http\Model\Fee;
+use App\Http\Model\Notice;
 
 
 class AdminController extends Controller
 {
+    public function viewDashboard(){
+    	$current_notice=Notice::where('display','1')->first();
+
+    	return view('adminpanel.dashboard')->with(compact('current_notice'));
+    }
+    
     public function feeCollectionView(){
     	$catagories=Catagory::get();
     	return view("adminpanel.collectfee")->with(compact('catagories'));

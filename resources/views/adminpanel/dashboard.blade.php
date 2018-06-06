@@ -4,19 +4,21 @@
 
 @section('content')
 
-<!-- Notice for pc version -->
-<div class="row hidden-sm-down">
-	<div class="col-lg-1 bg-danger"><b>Notice</b></div>
-	<div class="hidden-sm-down col-lg-11 scroll-left bg-primary">
-		<p>এতদ্বারা অত্র বিদ্যালযের সকলের অবগতির জন্য জানানো যাচ্ছে যে, পবিত্র মাহে রমজান এবং ঈদুল ফিতর উপলক্ষে অগামি ১৭-০৫-২০১৮ থেকে ২৫-০৫-২০১৮ পর্যন্ত বিদ্যালয়ের সকল কার্যক্রম বন্ধ থাকিবে</p>
-	</div>
-</div> 
-
-<!-- Notice for mobile version -->
-<div class="hidden-md-up bg-primary">
-	<p class="bg-danger">Notice</p>
-	<p class="text-white">এতদ্বারা অত্র বিদ্যালযের সকলের অবগতির জন্য জানানো যাচ্ছে যে, পবিত্র মাহে রমজান এবং ঈদুল ফিতর উপলক্ষে অগামি ১৭-০৫-২০১৮ থেকে ২৫-০৫-২০১৮ পর্যন্ত বিদ্যালয়ের সকল কার্যক্রম বন্ধ থাকিবে</p>
-</div>
+@if($current_notice)
+    <!-- Notice for pc version -->
+    <div class="row hidden-sm-down">
+    	<div class="col-lg-1 bg-danger"><b>Notice</b></div>
+    	<div class="hidden-sm-down col-lg-11 scroll-left bg-primary">
+    		<p>{{$current_notice->notice}}</p>
+    	</div>
+    </div> 
+    
+    <!-- Notice for mobile version -->
+    <div class="hidden-md-up bg-primary">
+    	<p class="bg-danger">Notice</p>
+    	<p class="text-white">{{$current_notice->notice}}</p>
+    </div>
+@endif
 
 <div class="row">
     <div class="col-md-3">
@@ -26,7 +28,7 @@
                     <span><i class="fa fa-group fa-3x"></i></span>
                 </div>
                 <div class="media-body media-text-right">
-                    <h2 class="color-white">1200</h2>
+                    <h2 class="color-white count">1200</h2>
                     <b class="m-b-0">Total Students</b>
                 </div>
             </div>
@@ -39,7 +41,7 @@
                     <span><i class="fa fa-bell fa-3x"></i></span>
                 </div>
                 <div class="media-body media-text-right">
-                    <h2 class="color-white">278</h2>
+                    <h2 class="color-white count">278</h2>
                     <b class="m-b-0">Workday</b>
                 </div>
             </div>
@@ -52,7 +54,7 @@
                     <span><i class="fa fa-smile-o fa-3x"></i></span>
                 </div>
                 <div class="media-body media-text-right">
-                    <h2 class="color-white">135</h2>
+                    <h2 class="color-white count">135</h2>
                     <b class="m-b-0">Holiday</b>
                 </div>
             </div>
@@ -65,7 +67,7 @@
                     <span><i class="fa fa-users fa-3x"></i></span>
                 </div>
                 <div class="media-body media-text-right">
-                    <h2 class="color-white">100</h2>
+                    <h2 class="color-white count">100</h2>
                     <b class="m-b-0">Total Employee</b>
                 </div>
             </div>

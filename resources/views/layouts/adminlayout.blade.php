@@ -109,11 +109,11 @@
                         <li class="nav-devider"></li>
 
                         <li class="nav-label">Home</li>
-                        <li> <a class="email-compose.html" href="/dashboard"><i class="fa fa-tachometer"></i>Dashboard</a>
+                        <li> <a class="email-compose.html" href="{{asset('/dashboard')}}"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li>
-                        <li> <a class="email-compose.html" href="/institution"><i class="fa fa-institution"></i>Institution Details</a>
+                        <li> <a class="email-compose.html" href="{{asset('institution')}}"><i class="fa fa-institution"></i>Institution Details</a>
                         </li>
-                        <li> <a class="email-compose.html" href="/noticelist"><i class="fa fa-info-circle"></i></i>Notice</a>
+                        <li> <a class="email-compose.html" href="{{asset('noticelist')}}"><i class="fa fa-info-circle"></i></i>Notice</a>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-hand-paper-o"></i><span class="hide-menu">Attendence</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -135,7 +135,7 @@
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Fee Collection</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="/feecollection"><i class="fa fa-arrow-right"></i> Collect Fee</a></li>
+                                <li><a href="{{asset('feecollection')}}"><i class="fa fa-arrow-right"></i> Collect Fee</a></li>
                                 <li><a href="email-compose.html"><i class="fa fa-arrow-right"></i> Collection Report</a></li>
                             </ul>
                         </li>

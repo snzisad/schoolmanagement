@@ -88,7 +88,7 @@
             </div>
       </div>
       <div class="modal-footer">
-        <a class="btn btn-secondary" id="modal-close-button" href="/institution">Cancel</a>
+        <a class="btn btn-secondary" id="modal-close-button" href="{{(asset('institution')}}">Cancel</a>
         <input type="submit" class="btn btn-primary" value='Save changes'/>
       </div>
   </form>
