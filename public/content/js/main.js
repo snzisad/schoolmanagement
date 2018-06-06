@@ -26,25 +26,26 @@ $(function () {
  	});
 
  	$('#collect-fee-button').on('click',function(e){
+ 	    
 	    $action=$("#fee-collection-form").attr('action');
 	    $csrf=$("#token_field").data('token');
 	    $student_id=$("#student_id").val();
 	    $catagory=$("#catagory-selection").val();
 	    $amount=$("#fee_amount").val();
 
-	    if($student_id==''){
+	    if(!$student_id){
 	    	alert('Enter Student ID');
 	    	return false;
 	    }
-	    else if($catagory==''){
+	    else if(!$catagory){
 	    	alert('Select a catagory');
 	    	return false;
 	    }
-	    else if($amount==''){
+	    else if(!$amount){
 	    	alert('Enter amount');
 	    	return false;
 	    }
-
+	    
  		$('#collect-fee-button').hide();
  		$('#loading-spinner').show();
  		$('#success-text').hide();
