@@ -75,4 +75,8 @@ Route::middleware('admin')->group(function (){
 		'as'=> 'feecollection'
 	]);
 
+	Route::get('/singlestuattnedence',function(){
+		return view('adminpanel.individualAttendence');
+	});
+
 });
