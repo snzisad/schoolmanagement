@@ -33,9 +33,9 @@
                     </div>
                     <div class="col-lg-8">
                         <h3><b>Anika Jahan</b></h3>
-                        <h5><b>Class:</b> 8</h5>
-                        <h5><b>Roll:</b> 13</h5>
-                        <h5><b>ID:</b> 112233</h5>
+                        <h5>Class: <b>Eight</b></h5>
+                        <h5>Roll: <b>13</b></h5>
+                        <h5>ID: <b>112233</b></h5>
                     </div>
                 </div>
             </div>
@@ -175,38 +175,58 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-6">
         <div class="card"  style="height: 720px">
             <div class="card-title">
                 Attendence of this month
             </div>
             <div class="card-body">
-
+                <h4>Month: <b>April 2018</b></h4>
+                <h4>Work Days: <b>27</b></h4>
+                <h4>Present: <b>20</b></h4>
+                <h4>Absent: <b>07</b></h4>
+                <br>
                  <table class="table">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col" colspan="6"><center>July 2018</center></th>
+                      <th class="bg-info text-light" scope="col" colspan="6"><center>Present Days</center></th>
                     </tr>
                   </thead>
                   <tbody>
-                    @for($i=1;$i<=30;$i=$i+6)
+                    @for($i=1;$i<=18;$i=$i+6)
                       <tr>
-                        <th class="bg-danger"><center>{{$i}}</center></th>
+                        <th><center>{{$i}}</center></th>
                         <th><center>{{$i+1}}</center></th>
                         <th><center>{{$i+2}}</center></th>
                         <th><center>{{$i+3}}</center></th>
                         <th><center>{{$i+4}}</center></th>
-                        <th class="bg-info"><center>{{$i+5}}</center></th>
+                        <th><center>{{$i+5}}</center></th>
                       </tr>
                     @endfor
                   </tbody>
                 </table>
 
                 <br>
-
-                <h4 class="bg-warning" style="padding: 5px; width:170px;"><b>Work Days:</b> 27</h4>
-                <h4 class="bg-success" style="padding: 5px; width:170px;"><b>Total Present:</b> 20</h4>
-                <h4 class="bg-danger"  style="padding: 5px; width:170px;"><b>Total Absent:</b> 07</h4>
+                 <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th class="bg-danger text-light" scope="col" colspan="6"><center>Absent Days</center></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for($i=19;$i<=30;$i=$i+6)
+                      <tr>
+                        <th><center>{{$i}}</center></th>
+                        <th><center>{{$i+1}}</center></th>
+                        <th><center>{{$i+2}}</center></th>
+                        <th><center>{{$i+3}}</center></th>
+                        <th><center>{{$i+4}}</center></th>
+                        <th><center>{{$i+5}}</center></th>
+                      </tr>
+                    @endfor
+                  </tbody>
+                </table>
             </div>
         </div>
     </div>

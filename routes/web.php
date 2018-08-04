@@ -79,4 +79,8 @@ Route::middleware('admin')->group(function (){
 		return view('adminpanel.individualAttendence');
 	});
 
+	Route::get('/attendenceofaday',function(){
+		return view('adminpanel.attendenceOfaDay');
+	});
+
 });

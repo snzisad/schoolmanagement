@@ -1,8 +1,6 @@
-@extends('layouts.adminlayout')
+<?php $__env->startSection('title',"Student Attendence"); ?>
 
-@section('title',"Student Attendence")
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="row">
     <div class="col-lg-6">
@@ -12,7 +10,8 @@
             </div>
             <div class="card-body">
                 <form class="form-group" method="POST" action="">
-                    {{csrf_field()}}
+                    <?php echo e(csrf_field()); ?>
+
                     <div class="form-group">
                         <input type="number" class="form-control" name="stu_id" placeholder="Enter Student ID" required autofocus>
                     </div>
@@ -29,13 +28,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-4">
-                        <img class="member-profile-pic" src="{{asset('content/images/student.png')}}"> 
+                        <img class="member-profile-pic" src="<?php echo e(asset('content/images/student.png')); ?>"> 
                     </div>
                     <div class="col-lg-8">
                         <h3><b>Anika Jahan</b></h3>
-                        <h5><b>Class:</b> 8</h5>
-                        <h5><b>Roll:</b> 13</h5>
-                        <h5><b>ID:</b> 112233</h5>
+                        <h5>Class: <b>Eight</b></h5>
+                        <h5>Roll: <b>13</b></h5>
+                        <h5>ID: <b>112233</b></h5>
                     </div>
                 </div>
             </div>
@@ -46,7 +45,7 @@
 
 <div class="row">
     <div class="col-lg-6">
-        <div class="card" style="height: 710px">
+        <div class="card" style="height: 720px">
             <div class="card-title">
                 Attendence of this year
             </div>
@@ -175,31 +174,56 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-6">
-        <div class="card"  style="height: 200px">
+        <div class="card"  style="height: 720px">
             <div class="card-title">
                 Attendence of this month
             </div>
             <div class="card-body">
-                <h4><b>Month: </b> April 2018</h4>
-                <h4><b>Work Days:</b> 27</h4>
-                <h4><b>Present:</b> 20</h4>
-                <h4><b>Absent:</b> 07</h4>
-
+                <h4>Month: <b>April 2018</b></h4>
+                <h4>Work Days: <b>27</b></h4>
+                <h4>Present: <b>20</b></h4>
+                <h4>Absent: <b>07</b></h4>
+                <br>
                  <table class="table">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col" colspan="4"><center>Present Days</center></th>
+                      <th class="bg-info text-light" scope="col" colspan="6"><center>Present Days</center></th>
                     </tr>
                   </thead>
                   <tbody>
+                    <?php for($i=1;$i<=18;$i=$i+6): ?>
+                      <tr>
+                        <th><center><?php echo e($i); ?></center></th>
+                        <th><center><?php echo e($i+1); ?></center></th>
+                        <th><center><?php echo e($i+2); ?></center></th>
+                        <th><center><?php echo e($i+3); ?></center></th>
+                        <th><center><?php echo e($i+4); ?></center></th>
+                        <th><center><?php echo e($i+5); ?></center></th>
+                      </tr>
+                    <?php endfor; ?>
+                  </tbody>
+                </table>
 
+                <br>
+                 <table class="table">
+                  <thead class="thead-light">
                     <tr>
-                      <th scope="row">January</th>
-                      <th scope="row">January</th>
-                      <th scope="row">January</th>
-                      <th scope="row">January</th>
+                      <th class="bg-danger text-light" scope="col" colspan="6"><center>Absent Days</center></th>
                     </tr>
+                  </thead>
+                  <tbody>
+                    <?php for($i=19;$i<=30;$i=$i+6): ?>
+                      <tr>
+                        <th><center><?php echo e($i); ?></center></th>
+                        <th><center><?php echo e($i+1); ?></center></th>
+                        <th><center><?php echo e($i+2); ?></center></th>
+                        <th><center><?php echo e($i+3); ?></center></th>
+                        <th><center><?php echo e($i+4); ?></center></th>
+                        <th><center><?php echo e($i+5); ?></center></th>
+                      </tr>
+                    <?php endfor; ?>
                   </tbody>
                 </table>
             </div>
@@ -207,4 +231,5 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

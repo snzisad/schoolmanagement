@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href='{{asset("content/images/logo.png")}}'>
-    <title>@yield('title')</title>
+    <link rel="icon" type="image/png" sizes="16x16" href='<?php echo e(asset("content/images/logo.png")); ?>'>
+    <title><?php echo $__env->yieldContent('title'); ?></title>
 
-    <link href="{{asset('content/css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
-	<link href="{{asset('content/css/lib/owl.carousel.min.css')}}" rel="stylesheet" />
-    <link href='{{asset("content/css/lib/owl.theme.default.min.css")}}' rel="stylesheet" />
+    <link href="<?php echo e(asset('content/css/lib/chartist/chartist.min.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('content/css/lib/owl.carousel.min.css')); ?>" rel="stylesheet" />
+    <link href='<?php echo e(asset("content/css/lib/owl.theme.default.min.css")); ?>' rel="stylesheet" />
     
     <!-- Bootstrap Core CSS -->
-    <link href='{{asset("content/css/lib/bootstrap/bootstrap.min.css")}}' rel="stylesheet">
+    <link href='<?php echo e(asset("content/css/lib/bootstrap/bootstrap.min.css")); ?>' rel="stylesheet">
 
     <!-- Progress Bar -->
-    <link href='{{asset("content/css/style.css")}}' rel="stylesheet">
+    <link href='<?php echo e(asset("content/css/style.css")); ?>' rel="stylesheet">
 
     <!-- Custom Css for Admin Panel -->
-    <link href='{{asset("content/css/adminpanel.css")}}' rel="stylesheet">
+    <link href='<?php echo e(asset("content/css/adminpanel.css")); ?>' rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href='{{asset("content/css/helper.css")}}' rel="stylesheet">
+    <link href='<?php echo e(asset("content/css/helper.css")); ?>' rel="stylesheet">
     
 </head>
 
@@ -46,7 +46,7 @@
                     <li class="nav-item"> 
                         <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
                         <div class="navbar-brand">
-                            <img src='{{asset("content/images/logo.png")}}' alt="homepage" class="dark-logo" width="50px" height="50px" />
+                            <img src='<?php echo e(asset("content/images/logo.png")); ?>' alt="homepage" class="dark-logo" width="50px" height="50px" />
                         </div>
                         </a> 
                     </li>
@@ -55,7 +55,7 @@
                         <a class="nav-link  hidden-sm-down text-muted  ">
                             <div class="navbar-brand">
                                 <!-- Logo icon -->
-                                <img src='{{asset("content/images/logo.png")}}' alt="homepage" class="dark-logo" width="55px" height="55px" />
+                                <img src='<?php echo e(asset("content/images/logo.png")); ?>' alt="homepage" class="dark-logo" width="55px" height="55px" />
                                 <!--End Logo icon -->
                                 <span class="school-eiin">EIIN: 105074  </span>
                             </div>
@@ -84,12 +84,13 @@
                         </li>
                         <!-- Logout -->
                         <li class="nav-item hidden-sm-down"> 
-                            <a class="nav-link hidden-sm-down text-muted"  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <a class="nav-link hidden-sm-down text-muted"  href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 
                                 <i class="fa fa-power-off"></i> <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div></a>
                             
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
+                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                <?php echo e(csrf_field()); ?>
+
                             </form>
                         </li>
 
@@ -109,18 +110,18 @@
                         <li class="nav-devider"></li>
 
                         <li class="nav-label">Home</li>
-                        <li> <a class="email-compose.html" href="{{asset('/dashboard')}}"><i class="fa fa-tachometer"></i>Dashboard</a>
+                        <li> <a class="email-compose.html" href="<?php echo e(asset('/dashboard')); ?>"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('institution')}}"><i class="fa fa-institution"></i>Institution Details</a>
+                        <li> <a class="email-compose.html" href="<?php echo e(asset('institution')); ?>"><i class="fa fa-institution"></i>Institution Details</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('noticelist')}}"><i class="fa fa-info-circle"></i></i>Notice</a>
+                        <li> <a class="email-compose.html" href="<?php echo e(asset('noticelist')); ?>"><i class="fa fa-info-circle"></i></i>Notice</a>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-hand-paper-o"></i><span class="hide-menu">Attendence</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-user"></i> Student's Attendence</a>
                                     <ul aria-expanded="false" class="collapse">
-                                        <li><a href="{{asset('singlestuattnedence')}}"><i class="fa fa-arrow-right"></i> Individual Attendance</span></a></li>
-                                        <li><a href="{{asset('attendenceofaday')}}"><i class="fa fa-arrow-right"></i> Today's Attendance</a></li>
+                                        <li><a href="<?php echo e(asset('singlestuattnedence')); ?>"><i class="fa fa-arrow-right"></i> Individual Attendance</span></a></li>
+                                        <li><a href="<?php echo e(asset('attendenceofaday')); ?>"><i class="fa fa-arrow-right"></i> Today's Attendance</a></li>
                                         <li><a href="#"><i class="fa fa-arrow-right"></i> Attendance Report</a></li>
                                     </ul>
                                 </li>
@@ -135,7 +136,7 @@
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Fee Collection</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{asset('feecollection')}}"><i class="fa fa-arrow-right"></i> Collect Fee</a></li>
+                                <li><a href="<?php echo e(asset('feecollection')); ?>"><i class="fa fa-arrow-right"></i> Collect Fee</a></li>
                                 <li><a href="email-compose.html"><i class="fa fa-arrow-right"></i> Collection Report</a></li>
                             </ul>
                         </li>
@@ -202,41 +203,43 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">@yield('title')</h3> </div>
+                    <h3 class="text-primary"><?php echo $__env->yieldContent('title'); ?></h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
+                        <li class="breadcrumb-item active"><?php echo $__env->yieldContent('title'); ?></li>
                     </ol>
                 </div>
             </div>
 
             <div class="container-fluid">
-                @if($errors->has('message'))
+                <?php if($errors->has('message')): ?>
                 <div class="col-sm-12" id="success-alert">
                     <div class="alert  alert-success alert-dismissible fade show text-dark" role="alert">
                       <span class="badge badge-pill badge-info">Success</span>
-                        {{$errors->first("message")}}
+                        <?php echo e($errors->first("message")); ?>
+
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 </div>
-                @elseif(count($errors)>0)
+                <?php elseif(count($errors)>0): ?>
                     <div class="col-sm-12" id="error-alert">
                         <div class="alert  alert-danger alert-dismissible fade show text-dark" role="alert">
                           <span class="badge badge-pill badge-danger">Error</span>
-                            @foreach($errors->all() as $error)
-                             {{$error}}
-                            @endforeach
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                             <?php echo e($error); ?>
+
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                     </div>
-                @endif
+                <?php endif; ?>
 
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>
             <!-- End Container fluid  -->
@@ -259,8 +262,9 @@
           <div class="modal-header">
             <h5 class="modal-title" id="new-catagory-modal-title">New Catagory</h5>
           </div>
-          <form class="form-group" method="POST" action="{{route('addcatagory')}}">
-            {{csrf_field()}}
+          <form class="form-group" method="POST" action="<?php echo e(route('addcatagory')); ?>">
+            <?php echo e(csrf_field()); ?>
+
               <div class="modal-body">
                 <div class="form-group">
                     <label for="catagory">Catagory Name</label><br>
@@ -279,23 +283,23 @@
     
 
     <!-- Bootstrap tether Core JavaScript -->
-    <!-- <script src='{{asset("content/js/popper.min.js")}}'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/popper.min.js")); ?>'></script> -->
     
 
-    <!-- <script src='{{asset("content/js/lib/datamap/d3.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/datamap/topojson.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/datamap/datamaps.world.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/datamap/datamap-init.js")}}'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/datamap/d3.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/datamap/topojson.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/datamap/datamaps.world.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/datamap/datamap-init.js")); ?>'></script> -->
 
-    <!-- <script src='{{asset("content/js/lib/weather/jquery.simpleWeather.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/weather/weather-init.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/owl-carousel/owl.carousel.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/owl-carousel/owl.carousel-init.js")}}'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/weather/jquery.simpleWeather.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/weather/weather-init.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/owl-carousel/owl.carousel.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/owl-carousel/owl.carousel-init.js")); ?>'></script> -->
 
 
-    <!-- <script src='{{asset("content/js/lib/chartist/chartist.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/chartist/chartist-plugin-tooltip.min.js")}}'></script> -->
-    <!-- <script src='{{asset("content/js/lib/chartist/chartist-init.js")}}'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/chartist/chartist.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/chartist/chartist-plugin-tooltip.min.js")); ?>'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/lib/chartist/chartist-init.js")); ?>'></script> -->
 
     <script src="content/js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
@@ -315,35 +319,35 @@
 
     
     <!-- JQuery UI -->
-    <!-- <script src='{{asset("content/js/jquery.min.js")}}'></script> -->
+    <!-- <script src='<?php echo e(asset("content/js/jquery.min.js")); ?>'></script> -->
 
-    <script src='{{asset("content/js/jquery-ui.min.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/jquery-ui.min.js")); ?>'></script>
 
     <!-- Bootstrap JS -->
-    <script src='{{asset("content/js/bootstrap.min.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/bootstrap.min.js")); ?>'></script>
     <!-- slimscrollbar scrollbar for side bar -->
-    <script src='{{asset("content/js/jquery.slimscroll.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/jquery.slimscroll.js")); ?>'></script>
     
     <!--show/hide sidebar submenu-->
-    <script src='{{asset("content/js/sidebarmenu.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/sidebarmenu.js")); ?>'></script>
     
     <!-- side bar response-->
-    <script src='{{asset("content/js/sticky-kit.min.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/sticky-kit.min.js")); ?>'></script>
 
     <!--Custom JavaScript for progressbar and menu -->
-    <script src='{{asset("content/js/scripts.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/scripts.js")); ?>'></script>
 
     <!-- Number Animation -->
-    <script src='{{asset("content/js/widgets.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/widgets.js")); ?>'></script>
 
     <!-- Chart -->
-    <script src='{{asset("content/js/lib/chart-js/Chart.bundle.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/lib/chart-js/Chart.bundle.js")); ?>'></script>
 
     <!-- Monthly Collection  -->
-    <script src='{{asset("content/js/lib/chart-js/chartjs-init.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/lib/chart-js/chartjs-init.js")); ?>'></script>
 
     <!-- Custom JS -->
-    <script src='{{asset("content/js/main.js")}}'></script>
+    <script src='<?php echo e(asset("content/js/main.js")); ?>'></script>
 
 </body>
 

@@ -38,10 +38,14 @@ textarea{
 	height: 120px;
 	border: 2px solid #efefef;
 	padding: 3px;
-	border-radius: 80px;
+	/*border-radius: 80px;*/
 }
 
 table th, table td{
 	border: 1px solid #DADADA;
 	text-align: center;
+}
+
+table tr th a{
+	color: blue;
 }
